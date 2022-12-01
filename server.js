@@ -4,14 +4,15 @@ const app = express();
 const mongoose = require('mongoose');
 const Blogs = require('./models/Blogs');
 const { render } = require('ejs');
+require('dotenv').config();
 
 // Connetion to the database
-const dbURI = 'mongodb+srv://Shabbir:1234@mongoclusture.rjnyqo8.mongodb.net/mongodb?retryWrites=true&w=majority'
+const dbURI = process.env.DB_URI;
 mongoose.connect(dbURI)
   .then(result => {
       console.log('Database connected!');
       // Listen on port number
-      app.listen(3000);
+      app.listen(4000);
   })
   .catch(err => console.log(err.message));
 
