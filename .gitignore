@@ -1,3 +1,5 @@
 # Unwanted file from the project
 
 node_modules
+
+.env
